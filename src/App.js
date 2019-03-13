@@ -14,7 +14,7 @@ class App extends Component {
           </div>
         </div>
         <Jobs />
-        <button className={"floaingButton"}>+</button>
+        <button className={"floatingButton btn"}>+</button>
       </div>
     );
   }

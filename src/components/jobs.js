@@ -12,13 +12,11 @@ export default class Jobs extends Component {
                 </div>
                 <div className={"jobsContainer"}>
                     <input placeholder={"Nome da vaga..."} />
-                    <div>
-                        <select >
-                            <option selected disabled>Estado</option>
-                            <option >test</option>
-                        </select>
-                        <button>Buscar</button>
-                    </div>
+                    <select >
+                        <option selected disabled>Estado</option>
+                        <option >test</option>
+                    </select>
+                    <button>Buscar</button>
                 </div>
             </div> 
         );
