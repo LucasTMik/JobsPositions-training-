@@ -11,21 +11,27 @@ export default class Jobs extends Component {
         this.state = {
             jobs: []
         }
+
+        this.updateJobs = this.updateJobs.bind(this);
     }
 
     componentWillMount() {
+        this.updateJobs();
+    }
+
+    updateJobs() {
         fetch('http://localhost:4100/jobs')
-            .then(jobsPromise => {
-                jobsPromise.json()
-                    .then(jobs => {
-                        this.setState({ jobs });
-                    })
-            });
+        .then(jobsPromise => {
+            jobsPromise.json()
+                .then(jobs => {
+                    this.setState({ jobs });
+                })
+        });
     }
 
     render() {
         const jobsList = this.state.jobs.map(function (job) {
-            return <Job title={job.name} salary={job.salary} />;
+            return <Job name={job.name} salary={job.salary} />;
         })
 
         return (

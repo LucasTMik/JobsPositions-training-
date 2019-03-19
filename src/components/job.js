@@ -6,7 +6,7 @@ export default class Job extends Component {
     render() {
         return (
             <div className={"jobContainer"}>
-              <h3>{this.props.title}</h3>
+              <h3>{this.props.name}</h3>
               <p>Salary: {this.props.salary}</p>
               <style jsx>{`
                 .jobContainer {
