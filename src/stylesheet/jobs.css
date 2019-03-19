@@ -1,49 +1,54 @@
 .content {
-    padding: 50px;
+    padding: 3%;
     font-size: 1.8rem;
     background: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Search containers */
-.searchContainer hr {
-    width: 80px;
-    margin: 0;
-    border: 2px #5d91e2 solid;
-}
 .searchContainer h3 {
     padding: 0;
     margin: 10px 0px;
     color: #4a4a4a;
-    font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
     font-weight: lighter;
+    position: relative;
+}
+.searchContainer h3::after {
+    content: '';
+    width: 85px;
+    height: 4px;
+    background: #5d91e2;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
 }
 
 /*Search Containers > jobContainers  */
-.jobsContainer {
+.searchOptions {
     display: flex;
     margin: 40px 0px;
     justify-content: space-between;
 }
-.jobsContainer > * {
+.searchOptions > *:not(div) {
     border-radius: 10px;
     outline: none;
     border: 1px solid #c4c4c4;
 }
-.jobsContainer input {
+.searchOptions input {
     width: 70%;
     padding-left: 20px;
 }
-.jobsContainer select {
+.searchOptions select {
     background: white;
     width: 20%;
     margin: 0px 2%;
 }
-.jobsContainer select:after {
+.searchOptions select:after {
     background: none;
 }
 
-.jobsContainer button {
+.searchOptions button {
     background: #5d91e2;
     border-radius: 10px;
     border: none;
@@ -53,21 +58,35 @@
     padding: 1%;
 }
 
+.jobsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.jobsGrid div {
+    margin: 1.6%;
+}
+
 @media screen and (max-width: 790px) {
-    .jobsContainer {
+    .searchOptions {
         flex-direction: column;
     }
-    .jobsContainer input {
+    .searchOptions input {
         width: 100%;
         padding: 10px 0px;
     }
-    .jobsContainer select {
+    .searchOptions select {
         width: 100%;
         padding: 10px 0px;
         margin: 10px 0px;
     }
-    .jobsContainer button {
+    .searchOptions button {
         width: 100%;
         padding: 10px 0px;
+    }
+
+    .jobsGrid {
+        grid-template-columns: 1fr;
     }
 }
